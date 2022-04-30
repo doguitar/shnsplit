@@ -8,7 +8,7 @@ work() {
         flac=$(cat "$1" | grep -oP '^FILE "\K[^"]+')
         dir=$(dirname "$1")   
                 
-        shnsplit -f "$1" -o flac -d "$dir" -t "%n - %t" "$dir/$flac" -O never
+        shnsplit -f "$1" -o flac -d "$dir" -t "%n - %t" "$dir/$flac" -O never -P none
 
         rm -f "$dir/$flac"
         rm -f "$1"
